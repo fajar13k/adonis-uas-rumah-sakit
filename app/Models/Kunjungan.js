@@ -13,20 +13,12 @@ class Kunjungan extends Model {
     return 'id'
   }
 
-  static get createdAtColumn() {
-    return 'tanggal_kunjungan'
-  }
-
   static get updatedAtColumn() {
     return null
   }
 
-  static get dates() {
-    return super.dates.concat(['tanggal_kunjungan'])
-  }
-
   static castDates(field, value) {
-    if (field === 'tanggal_kunjungan') {
+    if (field === 'created_at') {
       return value.format('DD MMMM YYYY')
     }
   }
