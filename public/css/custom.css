@@ -1,0 +1,46 @@
+@font-face {
+    font-family: Lobster;
+    src: url('../fonts/Lobster/Lobster-Regular.ttf');
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.auto-form-wrapper {
+    padding: 40px !important;
+}
+
+.border-rad-6 {
+    border-radius: 6px;
+}
+
+.btn-login {
+    padding: 0.7rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-login:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(92, 179, 182, 0.4);
+}
+
+.img-login {
+    width: 25%;
+    height: auto;
+}
+
+.main-text-login {
+    font-family: Lobster;
+    font-size: 4rem;
+}
+
+input[type=text], input[type=password] {
+    transition: all 0.30s ease-in-out;
+    outline: none;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    box-shadow: 0 0 5px rgba(33, 150, 243, 1);
+    border: 1px solid rgba(33, 150, 243, 1);
+}

@@ -1,0 +1,83 @@
+@layout('layouts.main')
+
+@section('main-content')
+<div class="main-panel">
+    <div class="content-wrapper">
+        <!-- Page Title Header Starts-->
+        <div class="row page-title-header">
+            <div class="col-12">
+                <div class="page-header">
+                    <h4 class="page-title">{{ title }}</h4>
+                    <div class="quick-link-wrapper d-md-flex flex-md-wrap">
+                        <ul class="quick-links">
+                            <li><a href="#">Beranda</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Title Header Ends-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12 grid-margin">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <h4 class="card-title mb-0">{{ title }}</h4>
+                                </div>
+                                <p>Pasien yang sedang menjalani Rawat Jalan</p>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="myTable">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nama</th>
+                                                <th>Golongan Darah</th>
+                                                <th>Tinggi Badan</th>
+                                                <th>Berat Badan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @each(row in pasien)
+                                            <tr>
+                                                <td>{{ $loop.index + 1 }}</td>
+                                                <td>{{ row.nama }}</td>
+                                                <td>{{ row.golongan_darah }}</td>
+                                                <td>{{ row.tinggi_badan }} cm</td>
+                                                <td>{{ row.berat_badan }} kg</td>
+                                            </tr>
+                                            @endeach
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nama</th>
+                                                <th>Golongan Darah</th>
+                                                <th>Tinggi Badan</th>
+                                                <th>Berat Badan</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @!section('before-footer')
+    <!--Start footer-->
+        @include('partials.footer')
+    <!--End footer-->
+    @!section('after-footer')
+</div>
+@endsection
+@section('after-script')
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
+</script>
+@endsection

@@ -16,4 +16,8 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+// Route.on('/').render('welcome')
+
+Route.get('/', 'KunjunganController.index').as('home')
+Route.get('perawat', 'PerawatController.index').as('perawat')
+Route.get('pasien', 'PasienController.index').as('pasien')

@@ -13,6 +13,15 @@ class Pasien extends Model {
     return 'id'
   }
 
+  /* Relasi Kunjungan */
+  kunjungan() {
+    return this.belongsTo(
+      'App/Models/Kunjungan',
+      'id',
+      'pasien'
+    )
+  }
+
 }
 
 module.exports = Pasien

@@ -13,6 +13,15 @@ class Perawat extends Model {
     return 'id'
   }
 
+  /* Relasi Kunjungan */
+  kunjungan() {
+    return this.belongsTo(
+      'App/Models/Kunjungan',
+      'id',
+      'perawat'
+    )
+  }
+
 }
 
 module.exports = Perawat

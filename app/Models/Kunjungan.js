@@ -23,6 +23,24 @@ class Kunjungan extends Model {
     }
   }
 
+  /* Relasi dengan pasien */
+  prwt() {
+    return this.hasOne(
+      'App/Models/Perawat',
+      'perawat',
+      'id'
+    )
+  }
+
+  /* Relasi dengan pasien */
+  psn() {
+    return this.hasOne(
+      'App/Models/Pasien',
+      'pasien',
+      'id'
+    )
+  }
+
 }
 
 module.exports = Kunjungan

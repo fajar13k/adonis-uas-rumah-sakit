@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Perawat = use('App/Models/Perawat');
+
 /**
  * Resourceful controller for interacting with perawats
  */
@@ -18,6 +20,12 @@ class PerawatController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+    const row = await Perawat.all();
+
+    return view.render('perawat.index', {
+        title: "Perawat",
+        perawat: row.toJSON()
+    })
   }
 
   /**

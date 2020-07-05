@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Pasien = use('App/Models/Pasien');
+
 /**
  * Resourceful controller for interacting with pasiens
  */
@@ -18,6 +20,12 @@ class PasienController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+    const row = await Pasien.all();
+
+    return view.render('pasien.index', {
+        title: "Pasien",
+        pasien: row.toJSON()
+    })
   }
 
   /**
